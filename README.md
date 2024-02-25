@@ -58,6 +58,7 @@ fn main() {
 
 
 ```rust
+fn main() {
     // let args = std::env::args();
     // //dbg!(args);
     // println!("{:?}", args);
@@ -75,5 +76,38 @@ fn main() {
     let number_1: i32 = args[1].parse().unwrap();
     let number_2: i32 = args[2].parse().unwrap();
     println!("{}", number_1 + number_2);
+}
 ```
 
+
+## 5 improvements
+
+* [video ](https://youtu.be/Z3bpIZrjvUY)
+
+
+* Turbofish
+* `-q`
+* `cargo fmt`
+* [absolute_paths](https://rust-lang.github.io/rust-clippy/master/index.html#absolute_paths)
+* `use` to import crates
+
+
+```rust
+use std::env;
+use std::process::exit;
+
+fn main() {
+    //let args = std::env::args().collect::<Vec<String>>();  // Turbofish ::<>
+    let args = env::args().collect::<Vec<String>>(); // Turbofish ::<>
+
+    if args.len() != 3 {
+        eprintln!("Usage: {} NUMBER NUMBER", args[0]);
+        //std::process::exit(1);
+        exit(1);
+    }
+
+    let number_1 = args[1].parse::<i32>().unwrap();
+    let number_2 = args[2].parse::<i32>().unwrap();
+    println!("{}", number_1 + number_2);
+}
+```

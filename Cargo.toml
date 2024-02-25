@@ -10,3 +10,4 @@ edition = "2021"
 
 [lints.clippy]
 pedantic = "deny"
+absolute_paths = "deny"
