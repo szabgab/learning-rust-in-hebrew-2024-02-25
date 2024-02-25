@@ -8,6 +8,9 @@
 
 ## Hello world
 
+* [video 1](https://youtu.be/BKcMkB_R-7k)
+* [video 2](https://youtu.be/uBcTgtbDhww)
+
 ```rust
 fn main() {
     let name = "Foo Bar";
@@ -27,6 +30,8 @@ cargo clippy --fix
 ```
 
 ## Convert string to number, error handling
+
+* [video 3](https://youtu.be/CN7mOZMLZs0)
 
 ```rust
 fn main() {
