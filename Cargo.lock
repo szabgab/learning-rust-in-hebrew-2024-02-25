@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "learning-rust-in-hebrew-2024-02-25"
+name = "demo"
 version = "0.1.0"
