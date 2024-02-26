@@ -2,9 +2,6 @@
 
 
 * [Rust language](https://www.rust-lang.org/)
-* [Clippy documentation](https://doc.rust-lang.org/stable/clippy/usage.html)
-
-
 
 ## 1. Install Rust - Hello world
 
@@ -78,6 +75,24 @@ pedantic = "deny"
 ## 3. Convert string to number, error handling
 
 * [video 3](https://youtu.be/CN7mOZMLZs0)
+* [page](https://he.code-maven.com/rust-course-3)
+
+* 00:00 We switched to Linux
+* 01:20 README - [Clippy documentation](https://doc.rust-lang.org/stable/clippy/usage.html)
+* 02:30 Error handling in Rust
+* 03:05 Error handling in Python, Java with exceptions in Perl and C with return -values.
+* 04:00 Input from the user or from files is always a string. Even when it looks like a number.
+* 05:00 `input.parse()`
+* 06:40 `i32`  `i8`
+* 07:45 What is this [Result](https://doc.rust-lang.org/std/result/enum.Result.html)?  `enum`.
+* 09:00 [unwrap](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap) will panic!.
+* 10:10 Comment.
+* 10:15 `dbg!` macro.
+* 10:50 Seing the first panic.
+* 11:35 `match`, `Ok()`, `Err()`.
+* 14:00 Explain `match` and the two arms.
+* 16:00 `eprintln!` and `std::process::exit`.
+
 
 ```rust
 fn main() {
