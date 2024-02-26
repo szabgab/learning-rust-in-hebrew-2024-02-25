@@ -3,7 +3,7 @@
 
 * [Rust language](https://www.rust-lang.org/)
 * [Clippy documentation](https://doc.rust-lang.org/stable/clippy/usage.html)
-* [Clippy source](https://github.com/rust-lang/rust-clippy)
+
 
 
 ## 1. Install Rust - Hello world
@@ -38,10 +38,27 @@ fn main() {
 }
 ```
 
-## Hello world
-
+## 2. println and a short introduction to Clippy
 
 * [video 2](https://youtu.be/uBcTgtbDhww)
+* [page](https://he.code-maven.com/rust-course-2)
+
+* 00:00 Plan
+* 00:30 `cargo run`
+* 00:40 `let` creating a variable. Strings are in double quotes.
+* 01:30 Yellow underline is warning. Put the mouse on top to see the actual message. Prefix the variable with `_` if we don't intend to use it any more.
+* 02:20 Curly braces `{}` as a placeholder in a string.
+* 03:20 Clippy - linter `cargo clippy` - [Clippy source](https://github.com/rust-lang/rust-clippy) with some of the lint groups.
+* 04:50 `cargo clippy -- -D clippy::pedantic`
+* 06:45 [uninlined_format_args](https://rust-lang.github.io/rust-clippy/master/index.html#/uninlined_format_args)
+* 07:40 `Cargo.toml` to configure Clippy (see below)
+* 08:20 Get help about Clippy `cargo clippy -- --help`
+* 08:50 I made typos in the Clippy configuration.
+* 09:50 `cargo clippy --fix` to fix the code as Clippy recommends.
+* 11:00 `git commit` using VS Code buttons.
+* 12:15 Run `cargo clippy --fix`.
+
+
 
 ```rust
 fn main() {
@@ -50,15 +67,15 @@ fn main() {
 }
 ```
 
+The **Clippy** configuration in `Cargo.toml`:
+
+```toml
+[lints.clippy]
+pedantic = "deny"
 ```
 
 
-cargo clippy
-cargo clippy -- -D clippy::pedantic
-cargo clippy --fix
-```
-
-## Convert string to number, error handling
+## 3. Convert string to number, error handling
 
 * [video 3](https://youtu.be/CN7mOZMLZs0)
 
