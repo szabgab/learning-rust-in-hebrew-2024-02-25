@@ -6,9 +6,41 @@
 * [Clippy source](https://github.com/rust-lang/rust-clippy)
 
 
-## Hello world
+## 1. Install Rust - Hello world
 
 * [video 1](https://youtu.be/BKcMkB_R-7k)
+* [page](https://he.code-maven.com/rust-course-1)
+
+* 00:00 Environment, VirtualBox, [Install Rust](https://www.rust-lang.org/learn/get-started) on Windows (install Visual Studio as a prerequisite).
+* 01:45 Install [Vistual Studio Code](https://code.visualstudio.com/).
+* 02:20 I have folder `c:\work` on Windows or `~/work` on Linux and macOS.
+* 03:10 Run `cmd` then `cd \work` on Windows.
+* 03:50 `rustc -V` and `rustc -vV`.
+* 04:35 First project in Rust `cargo new hello_world`. See the content of the folder using the file explorer.
+* 06:20 Run VS Code: `code .`
+* 06:40 Install the extension called **rust-analyzer** of VS Code.
+* 07:22 Looking at the generated `src/main.rs`.
+* 08:10 In the terminal type `cargo run`.
+* 08:40 `Cargo.toml` - dependencies, edition.
+* 10:55 Looking at the code: `println!` macro.
+* 12:10 The `Cargo.lock` file.
+* 13:00 Shall we add `Cargo.lock` to git? For programs yes, for libraries no.
+* 13:30 `.gitignore` and the `target/` folder.
+* 13:50 The `target/debug` folder and the `hello_world.exe`. (on Windows)
+* 14:30 `\target\debug\hello_world.exe` on Windows or `./target/debug/hello_world` on Linux and macOS.
+* 15:00 `cargo build` to compile the code.
+* 15:55 `cargo build --release` to compile in release mode.
+* 16:15 `\target\release\hello_world.exe` on Windows or `./target/release/hello_world` on Linux and macOS.
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+## Hello world
+
+
 * [video 2](https://youtu.be/uBcTgtbDhww)
 
 ```rust
@@ -19,10 +51,7 @@ fn main() {
 ```
 
 ```
-cargo new hello_world
-cargo run
-cargo build
-cargo build --release
+
 
 cargo clippy
 cargo clippy -- -D clippy::pedantic
