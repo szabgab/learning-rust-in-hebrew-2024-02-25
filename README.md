@@ -199,6 +199,28 @@ fn main() {
 * [video 6](https://youtu.be/Dkq-C4zWZyo)
 * [page](https://he.code-maven.com/rust-course-5)
 
+* 00:00 Preparation.
+* 00:47 Start computing the area of rectangle.
+* 01:17 default type `i32`.
+* 02:29 In VS Code Press `F8` to get next error.
+* 03:05 `cargo clippy --fix --allow-dirty`.
+* 04:30 Setting the type to `i16`. Deducting the type from the mathematical operation.
+* 06:30 Multiply `i32` by `i16`.
+* 07:00 Deduct the type from the operation.
+* 07:50 Different ways to set the type.
+* 09:40 What numerical types are in Rust? `i8` .. `i128`, `u8` .. `u128`, `f32`, `f64`.
+* 10:50 range `..`
+* 12:43 floating point.
+* 13:30 Using `i8`, overflow - compilation error.
+* 15:27 Getting numbers from the command line.
+* 18:22 Rust could not guess the type of the second parameter.
+* 19:50 panic if the result of a numerical operation does not fit in the variable.
+* 20:35 `cargo build --release` Compile in release mode.
+* 20:50 `cargo run --release` Run in release mode. - overflow (but no panic!).
+* 21:50 In debug mode overflow panics, in release mode it just overflows.
+* 22:40 Method that has `mul` in it, 4 methods to multiply. Using `saturating_mul`.
+
+
 ```rust
 fn main() {
     let width = 11;
