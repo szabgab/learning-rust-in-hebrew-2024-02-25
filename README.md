@@ -113,9 +113,28 @@ fn main() {
 ```
 
 
-## Command line arguments
+## 4. Command line arguments
 
 * [video 4](https://youtu.be/CxtGLZLdyj8)
+* [page](https://he.code-maven.com/rust-course-4)
+
+* 00:00 Plan
+* 01:00 Get parameters from the command line `std::env::args()`.
+* 02:00 The [Display trait](https://doc.rust-lang.org/std/fmt/trait.Display.html) is missing. Use `dbg!(args)`.
+* 02:50 I changed the name of the folder including the date of the course.
+* 03:55 The name of the executable by default is the name of the project. (The crate).
+* 04:50 Change the placeholder to be: `{:?}` (debug printing).
+* 06:10 How to get the individual parameters from the command line?
+* 06:20 `collect()`
+* 07:00 Define the type of what we expect from `collec()`.
+* 08:20 print the vector
+* 08:30 Access the length of the vector using `len()`.
+* 09:10 Access an element of the vector.
+* 09:35 Change the name of the package, and thus the name of the generated executable. `Cargo.toml`.
+* 11:00 Check if the number of parametes is as expected, exit with usage message if not.
+* 12:20 What is the name of the program?
+* 15:55 What does clippy say here?
+* 16:10 Statement inside the curly braces in a string does not work.
 
 
 ```rust
@@ -141,16 +160,18 @@ fn main() {
 ```
 
 
-## 5 improvements
+## 5. 4-5 improvements
 
-* [video ](https://youtu.be/Z3bpIZrjvUY)
+* [video](https://youtu.be/Z3bpIZrjvUY)
+* [page](https://he.code-maven.com/rust-course-5)
 
-
-* Turbofish
-* `-q`
-* `cargo fmt`
-* [absolute_paths](https://rust-lang.github.io/rust-clippy/master/index.html#absolute_paths)
-* `use` to import crates
+* 00:00 Review, clean commented code.
+* 00:30 Using [Turbofish](https://turbo.fish/) `::<>`. The editor showing the type.
+* 03:50 Quiet mode: `cargo run -q`.
+* 04:30 Code beautifier (prettifier, code formatter) `cargo fmt`
+* 05:40 Full (or absolute) path of functions.
+* 06:45 Adding lint called [absolute_paths](https://rust-lang.github.io/rust-clippy/master/index.html#absolute_paths).
+* 07:55 `use` to import packages, function, or traits.
 
 
 ```rust
@@ -172,3 +193,6 @@ fn main() {
     println!("{}", number_1 + number_2);
 }
 ```
+
+## 6.
+
