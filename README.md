@@ -197,7 +197,7 @@ fn main() {
 ## 6. Numbers and types of numbers
 
 * [video 6](https://youtu.be/Dkq-C4zWZyo)
-* [page](https://he.code-maven.com/rust-course-5)
+* [page](https://he.code-maven.com/rust-course-6)
 
 * 00:00 Preparation.
 * 00:47 Start computing the area of rectangle.
@@ -297,6 +297,9 @@ fn main() {
 
 ## 7. Function and testing
 
+* [video 7 ](https://youtu.be/kP20cF-TItA)
+* [page](https://he.code-maven.com/rust-course-7)
+
 * 00:00
 
 `cargo test`
@@ -320,6 +323,3 @@ fn check_add() {
     assert_eq!(0, add(-1, 1));
 }
 ```
-
-
-
