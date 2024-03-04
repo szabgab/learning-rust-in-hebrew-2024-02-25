@@ -323,3 +323,26 @@ fn check_add() {
     assert_eq!(0, add(-1, 1));
 }
 ```
+
+
+## 8
+
+```rust
+fn main() {
+    let numbers = [23, 8, 4, 7, 7, 4, 19];
+    //println!("{numbers:?}");
+    // for ix in 0..numbers.len() {
+    //     println!("{ix} {}", numbers[ix]);
+    // }
+    let number = 4;
+    let mut counter = 0;
+    for value in numbers {
+        //println!("{value}");
+        if value == number {
+            //counter = counter + 1;
+            counter += 1;
+        }
+    }
+    println!("Number of time {number} appears in {numbers:?} is {counter}");
+}
+```
