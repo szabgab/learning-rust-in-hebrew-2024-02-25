@@ -18,3 +18,10 @@ fn count_number(numbers: [i32; 7], number: i32) -> i32 {
     counter
 }
 
+#[test]
+fn check_counter() {
+    assert_eq!(count_number([23, 8, 4, 7, 7, 4, 19], 4), 2);
+    assert_eq!(count_number([23, 8, 4, 7, 7, 4, 19], 23), 1);
+    assert_eq!(count_number([23, 8, 4, 7, 7, 4, 19], 9), 0);
+    //assert_eq!(count_number([23, 8, 4], 23), 1);
+}
