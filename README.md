@@ -325,7 +325,13 @@ fn check_add() {
 ```
 
 
-## 8
+## 8. Count instances in an array
+
+* [video 8](https://youtu.be/5XiPCIFX_n0)
+* [page](https://he.code-maven.com/rust-course-8)
+
+* 00:00 Start
+
 
 ```rust
 fn main() {
