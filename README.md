@@ -300,10 +300,16 @@ fn main() {
 * [video 7 ](https://youtu.be/kP20cF-TItA)
 * [page](https://he.code-maven.com/rust-course-7)
 
-* 00:00
-
-`cargo test`
-
+* 00:00 Defining a function, parameters, return value.
+* 01:50 Using the function.
+* 02:40 Running the code.
+* 02:55 Running tests using `cargo test`.
+* 03:28 Writing a unitest.
+* 04:00 `assert_eq!`.
+* 04:23 `#[test]`.
+* 04:40 Running tests - success.
+* 05:10 Running tests - failure.
+* 05:55 Testing the real function.
 
 ```rust
 fn main() {
@@ -331,7 +337,23 @@ fn check_add() {
 * [page](https://he.code-maven.com/rust-course-8)
 
 * 00:00 Start
-
+* 00:20 Define a vector of numbers using `vec![]`.
+* 01:40 `println!` with `{}`, `{:?}`, or with `{:#?}` to pretty print.
+* 02:40 `for` loop on the elements of a vector.
+* 03:30 Loop on the indexes. Range using `..` and `len()`.
+* 05:54 `cargo clippy`: Switch from vector to array.
+* 07:30 Count instances.
+* 08:10 Marking a variable as mutable using `mut`.
+* 09:20 `cargo clippy`: use the `+=` operator.
+* 11:15 Save currnt version in README, Move code to function.
+* 12:30 Refactor: Mark code, right-click on the mouse, click on "Refactor" and "Extract into function". 
+* 13:00 The parameters of this new function.
+* 14:35 Run the code after refactoring.
+* 14:45 Rename function (`F2`).
+* 15:30 Commit the files to `git`.
+* 16:00 Writing a test `#[test]`.
+* 17:15 `cargo test`.
+* 18:00 Try passing an array of a different length. **mismatched types**. 
 
 ```rust
 fn main() {
