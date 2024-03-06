@@ -1,11 +1,16 @@
-use std::cmp;
+use std::{cmp, env, process};
 
 fn main() {
-    let numbers = [23, 8, 4, 7, 7, 4, 19];
-    let number = 4;
+    let args = env::args().collect::<Vec<String>>();
+    if args.len() < 2 {
+        println!("Usage: {} VALUE VALUEs", args[0]);
+        process::exit(1);
+    }
+    let value = &args[1];
+    let values = &args[2..];
 
-    let counter = count_instances(&numbers, &number);
-    println!("Number of time {number} appears in {numbers:?} is {counter}");
+    let counter = count_instances(values, value);
+    println!("Number of time {value} appears in {values:?} is {counter}");
 }
 
 fn count_instances<T: cmp::PartialEq>(values: &[T], value_to_find: &T) -> i32 {
@@ -27,5 +32,4 @@ fn check_counter() {
     assert_eq!(count_instances(&[23, 8, 4, 7, 7, 4, 19], &9), 0);
     assert_eq!(count_instances(&[23, 8, 4], &23), 1);
     assert_eq!(count_instances(&["foo", "bar", "foo"], &"foo"), 2);
-
 }
