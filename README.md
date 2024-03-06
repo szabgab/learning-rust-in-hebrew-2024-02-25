@@ -407,6 +407,24 @@ fn check_counter() {
 
 ## 9. Make function more generic - arbitrary length of array and arbitrary type of values.
 
+* [video 9](https://www.youtube.com/watch?v=eQ1gruzOvL4)
+* [page](https://he.code-maven.com/rust-course-9)
+
+* 00:00 Recap of the result from the previous video and the problem we have.
+* 00:38 The current function signature.
+* 01:25 Replace `[i32; 7]` by `&[i32]` in he function signature.
+* 04:20 `cargo run` already works.
+* 04:30 Fixing the tests.
+* 05:25 The type is not generic enough.
+* 05:57 `cargo clippy` is happy
+* 06:25 Save the code in the README
+* 07:25 Accept any types of values.
+* 11:14 Test counting instances of a string.
+* 12:18 `cargo clippy`
+* 13:00 It is enough to pass the parameter by reference.
+* 14:40 Rename the function and he parameters.
+* 15:18 `F2` to rename the function and the parameters.
+
 ```rust
 fn main() {
     let numbers = [23, 8, 4, 7, 7, 4, 19];
