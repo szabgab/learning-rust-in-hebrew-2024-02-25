@@ -346,14 +346,14 @@ fn check_add() {
 * 08:10 Marking a variable as mutable using `mut`.
 * 09:20 `cargo clippy`: use the `+=` operator.
 * 11:15 Save currnt version in README, Move code to function.
-* 12:30 Refactor: Mark code, right-click on the mouse, click on "Refactor" and "Extract into function". 
+* 12:30 Refactor: Mark code, right-click on the mouse, click on "Refactor" and "Extract into function".
 * 13:00 The parameters of this new function.
 * 14:35 Run the code after refactoring.
 * 14:45 Rename function (`F2`).
 * 15:30 Commit the files to `git`.
 * 16:00 Writing a test `#[test]`.
 * 17:15 `cargo test`.
-* 18:00 Try passing an array of a different length. **mismatched types**. 
+* 18:00 Try passing an array of a different length. **mismatched types**.
 
 ```rust
 fn main() {
@@ -495,7 +495,15 @@ fn check_counter() {
 * [video 10](https://youtu.be/fMfs1Rxarhc)
 * [page](https://he.code-maven.com/rust-course-10)
 
-* 00:00 Start
+* 00:00 Review and plan.
+* 00:30 Command line example.
+* 01:00 `std::env::args().collect::<Vec<String>>()`.
+* 03:10 Add TODO checking number of parameters.
+* 03:30 Fixing the compiler issue adding `&` in-front of the `args`.
+* 05:15 fixing issues reported by `cargo clippy`: Full path and unnecessary use of `&` when passing argument.
+* 06:55 Two extra things: the TODO and the `use` statements.
+* 07:05 Merge the `use` statements.
+* 07:30 What happens if the user does not provide any parameters?
 
 
 ```rust
@@ -535,3 +543,4 @@ fn check_counter() {
     assert_eq!(count_instances(&["foo", "bar", "foo"], &"foo"), 2);
 }
 ```
+
