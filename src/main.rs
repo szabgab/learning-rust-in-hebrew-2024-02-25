@@ -1,15 +1,27 @@
-use std::{cmp, env, process};
+use std::{cmp, env, fs, process};
 
 fn main() {
     let args = env::args().collect::<Vec<String>>();
-    if args.len() < 2 {
-        println!("Usage: {} VALUE VALUEs", args[0]);
+    if args.len() != 3 {
+        println!("Usage: {} VALUE FILENAME", args[0]);
         process::exit(1);
     }
     let value = &args[1];
-    let values = &args[2..];
+    let filename = &args[2];
+    // let content = fs::read_to_string(filename).unwrap();
+    // let content = fs::read_to_string(filename).expect("Could not read file");
+    let content = match fs::read_to_string(filename) {
+        Ok(cont) => cont,
+        Err(err) => {
+            eprintln!("Error: {err} while trying to read '{filename}'");
+            process::exit(2);
+        }
+    };
 
-    let counter = count_instances(values, value);
+    //println!("{content}");
+    let values = content.split('\n').collect::<Vec<&str>>();
+    //println!("{values:?}");
+    let counter = count_instances(&values, &value.as_str());
     println!("Number of time {value} appears in {values:?} is {counter}");
 }
 

@@ -544,3 +544,85 @@ fn check_counter() {
 }
 ```
 
+## 11. Read values from file, disallow unwrap and expect - use match
+
+
+* [video 11]()
+* [page](https://he.code-maven.com/rust-course-11)
+
+* 00:00 Review and plan.
+
+
+`Cargo.toml`
+
+```toml
+[package]
+name = "demo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+[lints.clippy]
+pedantic = "deny"
+absolute_paths = "deny"
+# unwrap_used = "warn"
+unwrap_used = "deny"
+expect_used = "deny"
+```
+
+`src/main.rs`
+
+```rust
+use std::{cmp, env, fs, process};
+
+fn main() {
+    let args = env::args().collect::<Vec<String>>();
+    if args.len() != 3 {
+        println!("Usage: {} VALUE FILENAME", args[0]);
+        process::exit(1);
+    }
+    let value = &args[1];
+    let filename = &args[2];
+    // let content = fs::read_to_string(filename).unwrap();
+    // let content = fs::read_to_string(filename).expect("Could not read file");
+    let content = match fs::read_to_string(filename) {
+        Ok(cont) => cont,
+        Err(err) => {
+            eprintln!("Error: {err} while trying to read '{filename}'");
+            process::exit(2);
+        }
+    };
+
+    //println!("{content}");
+    let values = content.split('\n').collect::<Vec<&str>>();
+    //println!("{values:?}");
+    let counter = count_instances(&values, &value.as_str());
+    println!("Number of time {value} appears in {values:?} is {counter}");
+}
+
+fn count_instances<T: cmp::PartialEq>(values: &[T], value_to_find: &T) -> i32 {
+    let mut counter = 0;
+    for value in values {
+        //println!("{value}");
+        if value == value_to_find {
+            //counter = counter + 1;
+            counter += 1;
+        }
+    }
+    counter
+}
+
+#[test]
+fn check_counter() {
+    assert_eq!(count_instances(&[23, 8, 4, 7, 7, 4, 19], &4), 2);
+    assert_eq!(count_instances(&[23, 8, 4, 7, 7, 4, 19], &23), 1);
+    assert_eq!(count_instances(&[23, 8, 4, 7, 7, 4, 19], &9), 0);
+    assert_eq!(count_instances(&[23, 8, 4], &23), 1);
+    assert_eq!(count_instances(&["foo", "bar", "foo"], &"foo"), 2);
+}
+```
+
