@@ -725,6 +725,12 @@ fn check_counter() {
 * [video 13](https://youtu.be/O_rShRFxmfU)
 * [page](https://he.code-maven.com/rust-course-13)
 
+* 00:00 Plan writing macro.
+* 00:35 What is a macro?
+* 02:53 Move the macro to the top of the code and add `!` to every place we use the macro.
+* 03:25 Don't forget to use `$` in the parameters!.
+
+* [The macro example I used](https://rust.code-maven.com/default-arguments-for-functions)
 
 ```rust
 use std::{env, fs, process};
