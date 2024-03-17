@@ -25,15 +25,12 @@ fn main() {
     println!("Number of time {value} appears in {values:?} is {counter}");
 }
 
-fn count_instances<T: cmp::PartialEq>(values: &[T], value_to_find: &T) -> i32 {
-    let mut counter = 0;
-    for value in values {
-        //println!("{value}");
-        if value == value_to_find {
-            //counter = counter + 1;
-            counter += 1;
-        }
-    }
+fn count_instances<T: cmp::PartialEq>(values: &[T], value_to_find: &T) -> usize {
+    let counter = values
+        .iter()
+        .filter(|value| value == &value_to_find)
+        .collect::<Vec<&T>>()
+        .len();
     counter
 }
 
