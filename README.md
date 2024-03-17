@@ -626,10 +626,10 @@ fn check_counter() {
 }
 ```
 
-## 12. Convert the code to be more functional
+## 12. Use filter to avoid mutable variable - convert the code to be more functional
 
-* [video 11]()
-* [page](https://he.code-maven.com/rust-course-11)
+* [video 12](https://youtu.be/flk8PK1X500)
+* [page](https://he.code-maven.com/rust-course-12)
 
 
 ```rust
