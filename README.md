@@ -655,6 +655,23 @@ fn check_counter() {
 * [video 12](https://youtu.be/flk8PK1X500)
 * [page](https://he.code-maven.com/rust-course-12)
 
+* 00:00 Review and plan.
+* 00:38 Start writing `filter` (list comprehension in Python).
+* 01:15 `iter`
+* 02:10 predicate (condition) of the `filter`.
+* 02:52 Writing turbofish.
+* 03:44 Compilation errors: First thing, don't forget the variable in the `filter`.
+* 04:00 Can't compare &T with T.
+* 04:33 Can't build `Vec<T>` from `&T` values.
+* 04:49 expected `i32` found `usize`. Try: `as i32`.
+* 05:24 `cargo clippy` complains that the casting of `usize` to `i32` will not always work on 64 bit machines.
+* 05:58 Cannot alwats cast `usize` to `i32` as on 64 bit machines `usize` can hold numbers that do not fit in `i32`.
+* 07:00 Try `i64`. Clippy still complains.
+* 07:33 Try `i128`. Clippy is happy.
+* 07:58 Return `usize`.
+* 08:32 Make the code look nicer using `cargo fmt`.
+* 08:50 Remove the type from the `collect` as it can be deducted from the rest of the code. Replace it by `_`.
+
 
 ```rust
 use std::{cmp, env, fs, process};
