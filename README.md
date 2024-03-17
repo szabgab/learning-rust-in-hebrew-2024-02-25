@@ -550,7 +550,31 @@ fn check_counter() {
 * [video 11](https://youtu.be/_mMwRMiQZ0A)
 * [page](https://he.code-maven.com/rust-course-11)
 
-* 00:00 Review and plan.
+* 00:00 Review what we have.
+* 00:39 The plan - search in a file.
+* 00:55 Create a text file.
+* 01:42 Get the name of the file on the command line.
+* 03:00 Read the content of the file using `std::fs::read_to_string`.
+* 04:22 Getting a `Result`, dealing with using `unwrap`.
+* 06:00 Cut the text into lines (words) using `split`.
+* 07:27 Use `Vec<&str>` instead of `Vec<String>` when collecting the result of `split`.
+* 08:52 The types of the two parameters are now different. Try `as_str`.
+* 09:54 "The size for values of type `str` cannot be known at compile time."
+* 10:00 Pass value using `&`. the end we had to pass.
+* 10:22 We had to match the two parameter to be of the same type.
+* 11:30 What does `clippy` say? Don't use full path when using library functions.
+* 11:55 `clippy` also suggest the use of character instead of one-character string.
+* 12:55 Mentioning the pre-commit hooks I use.
+* 13:22 Dealing with the `unwrap`.
+* 13:36 `panic!` when there is an error.
+* 14:27 Add `unwrap_used  = "deny"` to the `Cargo.toml` file.
+* 16:00 `echo $?`.
+* 16:07 Change the clippy configuration to `unwrap_used  = "warn"`
+* 16:35 `cargo clippy` for Continuous Integration (CI).
+* 17:20 Instead of `unwrap` we could also use `expect` that allows setting the `panic!` message.
+* 18:45 Change the clippy configuration adding `expect_used = "deny"`.
+* 20:10 Using `match` to handle the `Result`. (`Ok`, `Err`)
+* 22:10 Improve the error message include the filename between single quotes.
 
 
 `Cargo.toml`
