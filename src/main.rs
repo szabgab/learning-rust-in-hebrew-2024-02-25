@@ -1,14 +1,29 @@
 fn main() {
-    let text = String::from("abc");
-    println!("{}", text.len());
+    let text = String::from("abcéáő😍🎃🥽");
+    // println!("{}", text.len());
+    // println!("{}", &text[0..=12]);
 
-    let text = String::from("éáő");
-    println!("{}", text.len());
+    // for byte in text.bytes() {
+    //     println!("{byte}");
+    // }
 
-    let text = String::from("שלם");
-    println!("{}", text.len());
+    // for ch in text.chars() {
+    //     println!("{ch}");
+    // }
 
-    let text = String::from("😍🎃🥽");
-    println!("{}", text.len());
+    //println!("{}", text.chars().nth(7).unwrap());
+    //println!("{}", text.chars().nth(11).unwrap());
+
+    let index = 11;
+    match text.chars().nth(index) {
+        Some(val) => println!("{val}"),
+        None => println!("does not exist"),
+    }
+
+    // println!("{}", match text.chars().nth(index) {
+    //     Some(val) => val,
+    //     None => "does not exist",
+    // });
+
 }
 
