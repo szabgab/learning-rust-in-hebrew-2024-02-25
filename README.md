@@ -781,53 +781,24 @@ fn check_counter() {
 }
 ```
 
-## 14 String and &str
+## 14 ASCII and Unicode (UTF-16 and UTF-8)
 
-* [video 14](https://youtu.be/CxtGLZLdyj8)
+* [video 14]()
 * [page](https://he.code-maven.com/rust-course-14)
 
 
 ```rust
 fn main() {
-    let mut text = String::new();
+    let text = String::from("abc");
     println!("{}", text.len());
 
-    text.push_str("Hello");
+    let text = String::from("éáő");
     println!("{}", text.len());
 
-    // text.push_str("éáöüí");
-    // println!("{}", text.len());
-
-    // text.push_str("ש");
-    // println!("{}", text.len());
-
-    text.push_str("😂😝🤣");
+    let text = String::from("שלם");
     println!("{}", text.len());
-    println!();
 
-    //text[2]
-
-    // for ch in text.chars() {
-    //     println!("{ch}");
-    // }
-    // println!();
-
-
-    // for byte in text.bytes() {
-    //     println!("{byte}");
-    // }
-    // println!();
-
-    text = String::from("hello");
- 
-    //let sub = &text[0..3];
-    let sub = &text[0..3].to_owned();
-    println!("{:?}", text.as_ptr());
-    println!("{:?}", sub.as_ptr());
-    text = String::from("hello");
-    println!("{}", text);
-    println!("{}", sub);
-
-
+    let text = String::from("😍🎃🥽");
+    println!("{}", text.len());
 }
 ```
