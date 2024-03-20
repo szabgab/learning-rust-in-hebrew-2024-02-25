@@ -805,6 +805,9 @@ fn main() {
 
 # 15. bytes, chars, nth
 
+* [video 15]()
+* [page](https://he.code-maven.com/rust-course-15)
+
 ```rust
 fn main() {
     let text = String::from("abcéáő😍🎃🥽");
@@ -833,5 +836,28 @@ fn main() {
     //     None => "does not exist",
     // });
 
+}
+```
+
+## 16. String, &str, borrow, to_owned
+
+* [video 16]()
+* [page](https://he.code-maven.com/rust-course-16)
+
+```rust
+macro_rules! prt {
+    ($var: expr) => {
+        println!("{:p} {:?} {}", &$var, $var.as_ptr(), $var);
+    };
+}
+
+fn main() {
+    let mut text = String::from("Hello foo, how are you?");    
+    prt!(text);
+    let name = &text[6..9].to_owned();
+    prt!(name);
+    text = String::from("Hello bar, how are you?");
+    prt!(text);
+    prt!(name);
 }
 ```
