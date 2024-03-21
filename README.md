@@ -861,3 +861,77 @@ fn main() {
     prt!(name);
 }
 ```
+
+## 17. Strings, memory allocation and reallocation
+
+
+* [video 17]()
+* [page](https://he.code-maven.com/rust-course-17)
+
+```rust
+macro_rules! prt {
+    ($var: expr) => {
+        println!("{:2} {:2} {:p} {:<15?} '{}'", $var.len(), $var.capacity(), &$var, $var.as_ptr(), $var);
+    };
+}
+
+// ptr
+// len
+// capacity
+fn main() {
+    //let mut text = String::new();    
+    let mut text = String::with_capacity(50);    
+    prt!(text);
+
+    text.push('a');
+    prt!(text);
+
+    let name = String::from("foo");
+    prt!(name);
+
+    text.push('b');
+    prt!(text);
+
+    text.push_str("123456");
+    prt!(text);
+
+    text.push('x');
+    prt!(text);
+
+    text.push_str("123456789012345678901234567890");
+    prt!(text);
+
+
+}
+```
+
+
+```
+$ cargo run -q
+ 0  0 0x7ffc102a6d68 0x1             ''
+ 1  8 0x7ffc102a6d68 0x5fc34fe3fba0  'a'
+ 2  8 0x7ffc102a6d68 0x5fc34fe3fba0  'ab'
+ 8  8 0x7ffc102a6d68 0x5fc34fe3fba0  'ab123456'
+ 9 16 0x7ffc102a6d68 0x5fc34fe3fba0  'ab123456x'
+39 39 0x7ffc102a6d68 0x5fc34fe3fba0  'ab123456x123456789012345678901234567890'
+
+$ cargo run -q
+ 0  0 0x7fff0278ee40 0x1             ''
+ 1  8 0x7fff0278ee40 0x5fa09a0c6ba0  'a'
+ 3  3 0x7fff0278f588 0x5fa09a0c6bc0  'foo'
+ 2  8 0x7fff0278ee40 0x5fa09a0c6ba0  'ab'
+ 8  8 0x7fff0278ee40 0x5fa09a0c6ba0  'ab123456'
+ 9 16 0x7fff0278ee40 0x5fa09a0c6ba0  'ab123456x'
+39 39 0x7fff0278ee40 0x5fa09a0c6be0  'ab123456x123456789012345678901234567890'
+
+
+$ cargo run -q
+ 0 50 0x7ffd34b4de00 0x63d04e94aba0  ''
+ 1 50 0x7ffd34b4de00 0x63d04e94aba0  'a'
+ 3  3 0x7ffd34b4e548 0x63d04e94abe0  'foo'
+ 2 50 0x7ffd34b4de00 0x63d04e94aba0  'ab'
+ 8 50 0x7ffd34b4de00 0x63d04e94aba0  'ab123456'
+ 9 50 0x7ffd34b4de00 0x63d04e94aba0  'ab123456x'
+39 50 0x7ffd34b4de00 0x63d04e94aba0  'ab123456x123456789012345678901234567890'
+
+```
