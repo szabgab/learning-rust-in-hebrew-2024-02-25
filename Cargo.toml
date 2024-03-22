@@ -21,3 +21,5 @@ missing_docs_in_private_items = "allow"
 cargo_common_metadata = "allow"
 blanket_clippy_restriction_lints = "allow"
 pub_with_shorthand = "allow"
+
+implicit_return = "allow"

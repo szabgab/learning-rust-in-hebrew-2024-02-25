@@ -1016,7 +1016,7 @@ macro_rules! prt_str {
 pub(crate) use prt_str;
 ```
 
-20. Make clippy stricter
+## 20. Make clippy stricter
 
 * [video 20]()
 * [page](https://he.code-maven.com/rust-course-20)
@@ -1052,4 +1052,43 @@ missing_docs_in_private_items = "allow"
 cargo_common_metadata = "allow"
 blanket_clippy_restriction_lints = "allow"
 pub_with_shorthand = "allow"
+```
+
+
+## 21. count digits
+
+* [video 21]()
+* [page](https://he.code-maven.com/rust-course-21)
+
+
+```rust
+mod macros;
+//use macros::{prt, prt_str};
+
+fn main() {
+}
+
+// "12341"
+
+fn count_digits(text: &str) -> [u32; 10] {
+    let mut count: [u32; 10] = [0; 10];
+    for ch in text.chars() {
+        let ix = ch as usize - '0' as usize;
+        count[ix] += 1;
+    }
+
+    count 
+}
+
+#[test]
+fn test_empty() {
+    assert_eq!(count_digits(""), [0; 10])
+}
+
+#[test]
+fn test_short() {
+    assert_eq!(count_digits("1"), [0, 1, 0, 0, 0, 0, 0, 0, 0, 0]);
+    assert_eq!(count_digits("131"), [0, 2, 0, 1, 0, 0, 0, 0, 0, 0]);
+    //assert_eq!(count_digits("a"), [0, 2, 0, 1, 0, 0, 0, 0, 0, 0]);
+}
 ```
