@@ -1015,3 +1015,41 @@ macro_rules! prt_str {
 }
 pub(crate) use prt_str;
 ```
+
+20. Make clippy stricter
+
+* [video 20]()
+* [page](https://he.code-maven.com/rust-course-20)
+
+
+* [cargo lint: pub_with_shorthand](https://rust-lang.github.io/rust-clippy/master/index.html#/pub_with_shorthand)
+* [Crates](https://crates.io/).
+* [PyPI](https://pypi.org/) for Python.
+* [CPAN](https://metacpan.org/) for Perl.
+* [Hello Clippy example](https://rust.code-maven.com/hello-clippy).
+
+```toml
+[package]
+name = "demo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+[lints.clippy]
+pedantic     = { priority = -1, level = "deny" }
+suspicious   = { priority = -1, level = "deny" }
+complexity   = { priority = -1, level = "deny" }
+perf         = { priority = -1, level = "deny" }
+style        = { priority = -1, level = "deny" }
+restriction  = { priority = -1, level = "deny" }
+cargo        = { priority = -1, level = "deny" }
+
+missing_docs_in_private_items = "allow"
+cargo_common_metadata = "allow"
+blanket_clippy_restriction_lints = "allow"
+pub_with_shorthand = "allow"
+```
