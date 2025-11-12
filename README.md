@@ -1092,3 +1092,5 @@ fn test_short() {
     //assert_eq!(count_digits("a"), [0, 2, 0, 1, 0, 0, 0, 0, 0, 0]);
 }
 ```
+
+TODO: cargo clippy; move to separate file, get input from command line or from file and print to screen
